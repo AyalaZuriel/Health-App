@@ -25,13 +25,9 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
-
-
             }
-
         }
     }
-
 }
 
 @Composable
