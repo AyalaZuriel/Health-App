@@ -1,9 +1,13 @@
 package com.example.healthapp.data.local.datastore
 
 import android.content.Context
+import androidx.datastore.core.DataStore
 import com.example.healthapp.domain.model.UserSetting
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import java.io.IOException
+
+//todo
 
 object UserSettingDataStore {
     private val Context.datastore: DataStore<UserSetting> by dataStore(

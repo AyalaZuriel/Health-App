@@ -5,7 +5,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.healthapp.data.local.database.entities.StepEntity
-import com.example.healthapp.domain.model.Step
 
 @Dao
 interface StepDao {
