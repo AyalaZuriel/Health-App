@@ -18,5 +18,4 @@ object DataStoreModule {
     fun provideUserSettingsDataStore(@ApplicationContext context: Context): DataStore<UserSetting> {
         return context.dataStore
     }
-
 }

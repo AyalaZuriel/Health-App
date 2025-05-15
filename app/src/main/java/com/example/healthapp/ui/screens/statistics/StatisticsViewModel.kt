@@ -7,6 +7,7 @@ import com.example.healthapp.domain.repository.WeatherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+//todo
 @HiltViewModel
 class StatisticsViewModel @Inject constructor(
     private val stepRepository: StepRepository,

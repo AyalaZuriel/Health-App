@@ -12,13 +12,13 @@ import javax.inject.Inject
 
 class SleepRepositoryImpl @Inject constructor(private val sleepDao: SleepDao) : SleepRepository {
     @RequiresApi(Build.VERSION_CODES.O)
-    suspend fun insertSleep(sleep: Sleep) = sleepDao.insert(sleep.toEntity())
+    override suspend fun insertSleep(sleep: Sleep) = sleepDao.insert(sleep.toEntity())
 
     @RequiresApi(Build.VERSION_CODES.O)
-    suspend fun getSleepByDate(date: LocalDate): Sleep? = sleepDao.getSleepByDate(date.toString())?.toSleepItem()
+    override suspend fun getSleepByDate(date: LocalDate): Sleep? = sleepDao.getSleepByDate(date.toString())?.toSleepItem()
 
     @RequiresApi(Build.VERSION_CODES.O)
-    suspend fun getAllSleepRecords(): List<Sleep> = sleepDao.getAllSleep().map {
+    override suspend fun getAllSleepRecords(): List<Sleep> = sleepDao.getAllSleep().map {
         sleepEntity -> sleepEntity.toSleepItem()
     }
 }

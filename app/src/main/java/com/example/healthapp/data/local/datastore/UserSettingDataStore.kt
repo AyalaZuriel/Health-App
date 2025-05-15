@@ -25,5 +25,4 @@ object UserSettingDataStore {
             else throw exception
         }
     }
-
 }

@@ -12,13 +12,13 @@ import javax.inject.Inject
 
 class StepRepositoryImpl @Inject constructor(private val stepDao: StepDao) : StepRepository {
     @RequiresApi(Build.VERSION_CODES.O)
-    suspend fun insertSteps(step: Step) = stepDao.insert(step.toEntity())
+    override suspend fun insertSteps(step: Step) = stepDao.insert(step.toEntity())
 
     @RequiresApi(Build.VERSION_CODES.O)
-    suspend fun getStepsByDate(date: LocalDate): Step? = stepDao.getStepsByDate(date.toString())?.toStepItem()
+    override suspend fun getStepsByDate(date: LocalDate): Step? = stepDao.getStepsByDate(date.toString())?.toStepItem()
 
     @RequiresApi(Build.VERSION_CODES.O)
-    suspend fun getAllStepsRecords(): List<Step> = stepDao.getAllSteps().map {
+    override suspend fun getAllStepsRecords(): List<Step> = stepDao.getAllSteps().map {
         stepEntity -> stepEntity.toStepItem()
     }
 }
